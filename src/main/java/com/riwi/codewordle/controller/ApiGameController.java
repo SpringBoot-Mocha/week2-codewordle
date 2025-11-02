@@ -3,8 +3,8 @@ package com.riwi.codewordle.controller;
 import com.riwi.codewordle.domain.entities.Attempt;
 import com.riwi.codewordle.domain.entities.Game;
 import com.riwi.codewordle.domain.entities.Theme;
-import com.riwi.codewordle.repository.ThemeRepository;
 import com.riwi.codewordle.service.GameService;
+import com.riwi.codewordle.service.ThemeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -25,7 +25,7 @@ import java.util.Optional;
 public class ApiGameController {
 
     private final GameService gameService;
-    private final ThemeRepository themeRepository;
+    private final ThemeService themeService;
 
     /**
      * Create a new game
@@ -161,7 +161,7 @@ public class ApiGameController {
     @GetMapping("/themes")
     @Operation(summary = "Get available themes", description = "Retrieve all available game themes")
     public ResponseEntity<?> getThemes() {
-        List<Theme> themes = themeRepository.findAll();
+        List<Theme> themes = themeService.getAllThemes();
         
         Map<String, Object> response = new HashMap<>();
         response.put("success", true);

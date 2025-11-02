@@ -1,6 +1,6 @@
 package com.riwi.codewordle.controller;
 
-import com.riwi.codewordle.repository.ThemeRepository;
+import com.riwi.codewordle.service.ThemeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequiredArgsConstructor
 public class MvcGameController {
 
-    private final ThemeRepository themeRepository;
+    private final ThemeService themeService;
 
     /**
      * Display the main game page
@@ -19,7 +19,7 @@ public class MvcGameController {
      */
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("themes", themeRepository.findAll());
+        model.addAttribute("themes", themeService.getAllThemes());
         return "index";
     }
 }
