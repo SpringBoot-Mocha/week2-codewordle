@@ -205,6 +205,8 @@ class GameServiceTest {
                 .thenReturn(Optional.of(testWord));
         when(gameRepository.save(any(Game.class)))
                 .thenReturn(testGame);
+        when(gameRepository.findById(1L))
+                .thenReturn(Optional.of(testGame));
         when(attemptRepository.countByGameId(1L))
                 .thenReturn(0);
         when(attemptRepository.save(any(Attempt.class)))
@@ -230,7 +232,7 @@ class GameServiceTest {
                 .thenReturn(testGame);
 
         // Act
-        Attempt result = gameService.makeGuess(1L, "ZZZZZ");
+        Attempt result = gameService.makeGuess(1L, "ZZZZ");
 
         // Assert (Z doesn't exist in JAVA)
         String feedback = result.getFeedback();
