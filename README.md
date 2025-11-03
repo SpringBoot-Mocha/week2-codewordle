@@ -345,20 +345,6 @@ CREATE TABLE attempts (
 ### DevOps Theme
 - BUILD, NGINX, CACHE, PROXY, DOCKER, KUBERNETES
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is part of a Spring Boot learning exercise at RIWI.
-
 ## 👥 Author
 
-- **Johan** - [SpringBoot-Mocha](https://github.com/SpringBoot-Mocha)
-
-## 🙏 Acknowledgments
-
-- RIWI for the project requirements
-- Spring Boot community for excellent documentation
-- Wordle for the game inspiration
+- **Johan Ramirez** - [SpringBoot-Mocha](https://github.com/SpringBoot-Mocha)
